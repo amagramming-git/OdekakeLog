@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3ECDDE2A29650188001BEDCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE2929650188001BEDCC /* AppDelegate.swift */; };
+		3ECDDE2C29650188001BEDCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE2B29650188001BEDCC /* SceneDelegate.swift */; };
+		3ECDDE2E29650188001BEDCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE2D29650188001BEDCC /* ViewController.swift */; };
+		3ECDDE3129650188001BEDCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECDDE2F29650188001BEDCC /* Main.storyboard */; };
+		3ECDDE3429650188001BEDCC /* OdekakeLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE3229650188001BEDCC /* OdekakeLog.xcdatamodeld */; };
+		3ECDDE362965018C001BEDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ECDDE352965018C001BEDCC /* Assets.xcassets */; };
+		3ECDDE392965018C001BEDCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ECDDE372965018C001BEDCC /* LaunchScreen.storyboard */; };
+		3ECDDE442965018C001BEDCC /* OdekakeLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE432965018C001BEDCC /* OdekakeLogTests.swift */; };
+		3ECDDE4E2965018C001BEDCC /* OdekakeLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE4D2965018C001BEDCC /* OdekakeLogUITests.swift */; };
+		3ECDDE502965018C001BEDCC /* OdekakeLogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE4F2965018C001BEDCC /* OdekakeLogUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3ECDDE402965018C001BEDCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3ECDDE1E29650188001BEDCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3ECDDE2529650188001BEDCC;
+			remoteInfo = OdekakeLog;
+		};
+		3ECDDE4A2965018C001BEDCC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3ECDDE1E29650188001BEDCC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3ECDDE2529650188001BEDCC;
+			remoteInfo = OdekakeLog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3ECDDE2629650188001BEDCC /* OdekakeLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OdekakeLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ECDDE2929650188001BEDCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3ECDDE2B29650188001BEDCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3ECDDE2D29650188001BEDCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3ECDDE3029650188001BEDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3ECDDE3329650188001BEDCC /* OdekakeLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OdekakeLog.xcdatamodel; sourceTree = "<group>"; };
+		3ECDDE352965018C001BEDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3ECDDE382965018C001BEDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3ECDDE3A2965018C001BEDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3ECDDE3F2965018C001BEDCC /* OdekakeLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OdekakeLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ECDDE432965018C001BEDCC /* OdekakeLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdekakeLogTests.swift; sourceTree = "<group>"; };
+		3ECDDE492965018C001BEDCC /* OdekakeLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OdekakeLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ECDDE4D2965018C001BEDCC /* OdekakeLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdekakeLogUITests.swift; sourceTree = "<group>"; };
+		3ECDDE4F2965018C001BEDCC /* OdekakeLogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdekakeLogUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3ECDDE2329650188001BEDCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ECDDE3C2965018C001BEDCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ECDDE462965018C001BEDCC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3ECDDE1D29650188001BEDCC = {
+			isa = PBXGroup;
+			children = (
+				3ECDDE2829650188001BEDCC /* OdekakeLog */,
+				3ECDDE422965018C001BEDCC /* OdekakeLogTests */,
+				3ECDDE4C2965018C001BEDCC /* OdekakeLogUITests */,
+				3ECDDE2729650188001BEDCC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3ECDDE2729650188001BEDCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3ECDDE2629650188001BEDCC /* OdekakeLog.app */,
+				3ECDDE3F2965018C001BEDCC /* OdekakeLogTests.xctest */,
+				3ECDDE492965018C001BEDCC /* OdekakeLogUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3ECDDE2829650188001BEDCC /* OdekakeLog */ = {
+			isa = PBXGroup;
+			children = (
+				3ECDDE2929650188001BEDCC /* AppDelegate.swift */,
+				3ECDDE2B29650188001BEDCC /* SceneDelegate.swift */,
+				3ECDDE2D29650188001BEDCC /* ViewController.swift */,
+				3ECDDE2F29650188001BEDCC /* Main.storyboard */,
+				3ECDDE352965018C001BEDCC /* Assets.xcassets */,
+				3ECDDE372965018C001BEDCC /* LaunchScreen.storyboard */,
+				3ECDDE3A2965018C001BEDCC /* Info.plist */,
+				3ECDDE3229650188001BEDCC /* OdekakeLog.xcdatamodeld */,
+			);
+			path = OdekakeLog;
+			sourceTree = "<group>";
+		};
+		3ECDDE422965018C001BEDCC /* OdekakeLogTests */ = {
+			isa = PBXGroup;
+			children = (
+				3ECDDE432965018C001BEDCC /* OdekakeLogTests.swift */,
+			);
+			path = OdekakeLogTests;
+			sourceTree = "<group>";
+		};
+		3ECDDE4C2965018C001BEDCC /* OdekakeLogUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3ECDDE4D2965018C001BEDCC /* OdekakeLogUITests.swift */,
+				3ECDDE4F2965018C001BEDCC /* OdekakeLogUITestsLaunchTests.swift */,
+			);
+			path = OdekakeLogUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3ECDDE2529650188001BEDCC /* OdekakeLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3ECDDE532965018C001BEDCC /* Build configuration list for PBXNativeTarget "OdekakeLog" */;
+			buildPhases = (
+				3ECDDE2229650188001BEDCC /* Sources */,
+				3ECDDE2329650188001BEDCC /* Frameworks */,
+				3ECDDE2429650188001BEDCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OdekakeLog;
+			productName = OdekakeLog;
+			productReference = 3ECDDE2629650188001BEDCC /* OdekakeLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3ECDDE3E2965018C001BEDCC /* OdekakeLogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3ECDDE562965018C001BEDCC /* Build configuration list for PBXNativeTarget "OdekakeLogTests" */;
+			buildPhases = (
+				3ECDDE3B2965018C001BEDCC /* Sources */,
+				3ECDDE3C2965018C001BEDCC /* Frameworks */,
+				3ECDDE3D2965018C001BEDCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3ECDDE412965018C001BEDCC /* PBXTargetDependency */,
+			);
+			name = OdekakeLogTests;
+			productName = OdekakeLogTests;
+			productReference = 3ECDDE3F2965018C001BEDCC /* OdekakeLogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3ECDDE482965018C001BEDCC /* OdekakeLogUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3ECDDE592965018C001BEDCC /* Build configuration list for PBXNativeTarget "OdekakeLogUITests" */;
+			buildPhases = (
+				3ECDDE452965018C001BEDCC /* Sources */,
+				3ECDDE462965018C001BEDCC /* Frameworks */,
+				3ECDDE472965018C001BEDCC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3ECDDE4B2965018C001BEDCC /* PBXTargetDependency */,
+			);
+			name = OdekakeLogUITests;
+			productName = OdekakeLogUITests;
+			productReference = 3ECDDE492965018C001BEDCC /* OdekakeLogUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3ECDDE1E29650188001BEDCC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					3ECDDE2529650188001BEDCC = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					3ECDDE3E2965018C001BEDCC = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 3ECDDE2529650188001BEDCC;
+					};
+					3ECDDE482965018C001BEDCC = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 3ECDDE2529650188001BEDCC;
+					};
+				};
+			};
+			buildConfigurationList = 3ECDDE2129650188001BEDCC /* Build configuration list for PBXProject "OdekakeLog" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3ECDDE1D29650188001BEDCC;
+			productRefGroup = 3ECDDE2729650188001BEDCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3ECDDE2529650188001BEDCC /* OdekakeLog */,
+				3ECDDE3E2965018C001BEDCC /* OdekakeLogTests */,
+				3ECDDE482965018C001BEDCC /* OdekakeLogUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3ECDDE2429650188001BEDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ECDDE392965018C001BEDCC /* LaunchScreen.storyboard in Resources */,
+				3ECDDE362965018C001BEDCC /* Assets.xcassets in Resources */,
+				3ECDDE3129650188001BEDCC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ECDDE3D2965018C001BEDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ECDDE472965018C001BEDCC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3ECDDE2229650188001BEDCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ECDDE2E29650188001BEDCC /* ViewController.swift in Sources */,
+				3ECDDE3429650188001BEDCC /* OdekakeLog.xcdatamodeld in Sources */,
+				3ECDDE2A29650188001BEDCC /* AppDelegate.swift in Sources */,
+				3ECDDE2C29650188001BEDCC /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ECDDE3B2965018C001BEDCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ECDDE442965018C001BEDCC /* OdekakeLogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3ECDDE452965018C001BEDCC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ECDDE502965018C001BEDCC /* OdekakeLogUITestsLaunchTests.swift in Sources */,
+				3ECDDE4E2965018C001BEDCC /* OdekakeLogUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3ECDDE412965018C001BEDCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3ECDDE2529650188001BEDCC /* OdekakeLog */;
+			targetProxy = 3ECDDE402965018C001BEDCC /* PBXContainerItemProxy */;
+		};
+		3ECDDE4B2965018C001BEDCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3ECDDE2529650188001BEDCC /* OdekakeLog */;
+			targetProxy = 3ECDDE4A2965018C001BEDCC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3ECDDE2F29650188001BEDCC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3ECDDE3029650188001BEDCC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3ECDDE372965018C001BEDCC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3ECDDE382965018C001BEDCC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3ECDDE512965018C001BEDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3ECDDE522965018C001BEDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3ECDDE542965018C001BEDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L8K59PYP2K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OdekakeLog/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amagramming.OdekakeLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3ECDDE552965018C001BEDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L8K59PYP2K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OdekakeLog/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amagramming.OdekakeLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3ECDDE572965018C001BEDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L8K59PYP2K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amagramming.OdekakeLogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OdekakeLog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OdekakeLog";
+			};
+			name = Debug;
+		};
+		3ECDDE582965018C001BEDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L8K59PYP2K;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amagramming.OdekakeLogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OdekakeLog.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OdekakeLog";
+			};
+			name = Release;
+		};
+		3ECDDE5A2965018C001BEDCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L8K59PYP2K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amagramming.OdekakeLogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OdekakeLog;
+			};
+			name = Debug;
+		};
+		3ECDDE5B2965018C001BEDCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L8K59PYP2K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amagramming.OdekakeLogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OdekakeLog;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3ECDDE2129650188001BEDCC /* Build configuration list for PBXProject "OdekakeLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ECDDE512965018C001BEDCC /* Debug */,
+				3ECDDE522965018C001BEDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3ECDDE532965018C001BEDCC /* Build configuration list for PBXNativeTarget "OdekakeLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ECDDE542965018C001BEDCC /* Debug */,
+				3ECDDE552965018C001BEDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3ECDDE562965018C001BEDCC /* Build configuration list for PBXNativeTarget "OdekakeLogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ECDDE572965018C001BEDCC /* Debug */,
+				3ECDDE582965018C001BEDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3ECDDE592965018C001BEDCC /* Build configuration list for PBXNativeTarget "OdekakeLogUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3ECDDE5A2965018C001BEDCC /* Debug */,
+				3ECDDE5B2965018C001BEDCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3ECDDE3229650188001BEDCC /* OdekakeLog.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3ECDDE3329650188001BEDCC /* OdekakeLog.xcdatamodel */,
+			);
+			currentVersion = 3ECDDE3329650188001BEDCC /* OdekakeLog.xcdatamodel */;
+			path = OdekakeLog.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3ECDDE1E29650188001BEDCC /* Project object */;
+}
