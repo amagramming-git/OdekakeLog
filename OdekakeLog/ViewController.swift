@@ -27,11 +27,25 @@ class ViewController: UIViewController {
     }
     
     @IBAction func mainButtonAction(_ sender: Any) {
+        //taskIdの払い出し
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmmss"
+        let now = Date()
+        UserDefaults.standard.set(Int64(formatter.string(from: now)), forKey: "taskId")
         
+        // 位置情報取得の設定
+        let isAuthorizedAlways = locationManager!.authorizationStatus == .authorizedAlways
+        locationManager!.allowsBackgroundLocationUpdates = isAuthorizedAlways
+        locationManager!.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager!.distanceFilter = 10
+        locationManager!.activityType = .other // 備考 typeに応じて道とかにいい感じに沿わせてくれる
+
+        // 位置情報取得開始
+        locationManager!.startUpdatingLocation()
     }
     
     @IBAction func subButtonAction(_ sender: Any) {
-        
+        locationManager!.stopUpdatingLocation()
     }
 
     func requestAlwaysAuthorization(){
@@ -54,6 +68,12 @@ class ViewController: UIViewController {
 extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last else {return}
+        let taskId = Int64(UserDefaults.standard.integer(forKey: "taskId"))
+        let entity = LocationEntity.new(
+            taskId: taskId,
+            latitude: newLocation.coordinate.latitude,
+            longitude: newLocation.coordinate.longitude,
+            timestamp: newLocation.timestamp)
     }
 }
 
