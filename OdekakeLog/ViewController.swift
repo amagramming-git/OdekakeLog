@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // mapの準備
+        mainMapView.delegate = self
         
         // locationManagerの準備
         locationManager = CLLocationManager()
@@ -27,6 +29,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func mainButtonAction(_ sender: Any) {
+        //描画したMapの線を削除
+        mainMapView.removeOverlays(mainMapView.overlays)
+
         //taskIdの払い出し
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMddHHmmss"
@@ -46,6 +51,22 @@ class ViewController: UIViewController {
     
     @IBAction func subButtonAction(_ sender: Any) {
         locationManager!.stopUpdatingLocation()
+        
+        //取得した位置情報データの取得
+        let taskId = Int64(UserDefaults.standard.integer(forKey: "taskId"))
+        let locationEntityList: [LocationEntity] = CoreDataRepository.array(
+            predicate: "taskId = \(taskId)",
+            sortKey: "timestamp")
+        
+        //取得したデータをMapに描画
+        var coordinates: [CLLocationCoordinate2D] = []
+        locationEntityList.forEach{
+            coordinates.append(CLLocationCoordinate2D(
+                latitude: $0.latitude,
+                longitude: $0.longitude))
+        }
+        let polyLine = MKPolyline(coordinates: coordinates, count: coordinates.count)
+        mainMapView.addOverlay(polyLine)
     }
 
     func requestAlwaysAuthorization(){
@@ -66,6 +87,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: CLLocationManagerDelegate {
+    //位置情報取得時に呼び出されるメソッド
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last else {return}
         let taskId = Int64(UserDefaults.standard.integer(forKey: "taskId"))
@@ -74,11 +96,36 @@ extension ViewController: CLLocationManagerDelegate {
             latitude: newLocation.coordinate.latitude,
             longitude: newLocation.coordinate.longitude,
             timestamp: newLocation.timestamp)
+        CoreDataRepository.add(entity)
+        CoreDataRepository.save()
+        
+        // 地図を表示するための領域を再構築
+        let region = MKCoordinateRegion(
+            center: CLLocationCoordinate2DMake(
+                newLocation.coordinate.latitude,
+                newLocation.coordinate.longitude),
+            latitudinalMeters: 1000.0,
+            longitudinalMeters: 1000.0
+        )
+        mainMapView.setRegion(region, animated: true)
     }
 }
 
+extension ViewController: MKMapViewDelegate {
+    //MapのOverlay時に呼び出されるメソッド
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if let polyline = overlay as? MKPolyline {
+            let polylineRenderer = MKPolylineRenderer(polyline: polyline)
+            polylineRenderer.strokeColor = .blue
+            polylineRenderer.lineWidth = 10.0
+            return polylineRenderer
+        }
+        return MKOverlayRenderer()
+    }
+}
 
 //https://qiita.com/eito_2/items/7e7d0b658f2bcda3897e 基本的に位置情報の取得で最も参考にした
 //https://swiswiswift.com/2021-03-05/ Mapに線を引く
+//https://stackoverflow.com/questions/50372633/remove-polylines-at-swift Mapの線を削除する
 //https://program-life.com/1431 バックグラウンドで位置情報を取得する際の注意事項
 //https://qiita.com/uhooi/items/429cac9b798b9c0937ae UserDefaultの使い方
