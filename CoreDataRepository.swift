@@ -35,9 +35,15 @@ extension CoreDataRepository {
 
 // MARK: CRUD
 extension CoreDataRepository {
-    static func array<T: NSManagedObject>() -> [T] {
+    static func array<T: NSManagedObject>(predicate:String = "",sortKey:String = "",ascending:Bool = true) -> [T] {
         do {
             let request = NSFetchRequest<T>(entityName: String(describing: T.self))
+            if !predicate.isEmpty {
+                request.predicate = NSPredicate(format: predicate)
+            }
+            if !sortKey.isEmpty {
+                request.sortDescriptors = [NSSortDescriptor(key: sortKey, ascending: ascending)]
+            }
             return try context.fetch(request)
         } catch {
             fatalError()
@@ -69,3 +75,7 @@ extension CoreDataRepository {
         context.rollback()
     }
 }
+
+// https://hajihaji-lemon.com/swift/coredata-nspredicate/ fetchのやり方
+// https://www.fuwamaki.com/article/325 基本的に一番参考にした
+// https://www.2nd-walker.com/2020/03/05/swift-basic-how-to-use-coredata/#tiao_jiande_jiaori_rumi 詳細な使用方法
