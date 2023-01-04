@@ -17,6 +17,11 @@
 		3ECDDE442965018C001BEDCC /* OdekakeLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE432965018C001BEDCC /* OdekakeLogTests.swift */; };
 		3ECDDE4E2965018C001BEDCC /* OdekakeLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE4D2965018C001BEDCC /* OdekakeLogUITests.swift */; };
 		3ECDDE502965018C001BEDCC /* OdekakeLogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE4F2965018C001BEDCC /* OdekakeLogUITestsLaunchTests.swift */; };
+		3ED6E90A2965A38200234F08 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6E9092965A38200234F08 /* CoreDataRepository.swift */; };
+		3ED6E9112965AE2200234F08 /* LocationEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6E90F2965AE2200234F08 /* LocationEntity+CoreDataClass.swift */; };
+		3ED6E9122965AE2200234F08 /* LocationEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED6E9102965AE2200234F08 /* LocationEntity+CoreDataProperties.swift */; };
+		3ED6E9152965AE4800234F08 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6E9142965AE4800234F08 /* MapKit.framework */; };
+		3ED6E9172965AE5100234F08 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED6E9162965AE5100234F08 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		3ECDDE492965018C001BEDCC /* OdekakeLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OdekakeLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ECDDE4D2965018C001BEDCC /* OdekakeLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdekakeLogUITests.swift; sourceTree = "<group>"; };
 		3ECDDE4F2965018C001BEDCC /* OdekakeLogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdekakeLogUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3ED6E9092965A38200234F08 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
+		3ED6E90F2965AE2200234F08 /* LocationEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3ED6E9102965AE2200234F08 /* LocationEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3ED6E9142965AE4800234F08 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3ED6E9162965AE5100234F08 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ED6E9172965AE5100234F08 /* CoreLocation.framework in Frameworks */,
+				3ED6E9152965AE4800234F08 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,10 +93,14 @@
 		3ECDDE1D29650188001BEDCC = {
 			isa = PBXGroup;
 			children = (
+				3ED6E90F2965AE2200234F08 /* LocationEntity+CoreDataClass.swift */,
+				3ED6E9102965AE2200234F08 /* LocationEntity+CoreDataProperties.swift */,
+				3ED6E9092965A38200234F08 /* CoreDataRepository.swift */,
 				3ECDDE2829650188001BEDCC /* OdekakeLog */,
 				3ECDDE422965018C001BEDCC /* OdekakeLogTests */,
 				3ECDDE4C2965018C001BEDCC /* OdekakeLogUITests */,
 				3ECDDE2729650188001BEDCC /* Products */,
+				3ED6E9132965AE4700234F08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +144,15 @@
 				3ECDDE4F2965018C001BEDCC /* OdekakeLogUITestsLaunchTests.swift */,
 			);
 			path = OdekakeLogUITests;
+			sourceTree = "<group>";
+		};
+		3ED6E9132965AE4700234F08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3ED6E9162965AE5100234F08 /* CoreLocation.framework */,
+				3ED6E9142965AE4800234F08 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +286,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ED6E90A2965A38200234F08 /* CoreDataRepository.swift in Sources */,
 				3ECDDE2E29650188001BEDCC /* ViewController.swift in Sources */,
 				3ECDDE3429650188001BEDCC /* OdekakeLog.xcdatamodeld in Sources */,
+				3ED6E9122965AE2200234F08 /* LocationEntity+CoreDataProperties.swift in Sources */,
 				3ECDDE2A29650188001BEDCC /* AppDelegate.swift in Sources */,
 				3ECDDE2C29650188001BEDCC /* SceneDelegate.swift in Sources */,
+				3ED6E9112965AE2200234F08 /* LocationEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
