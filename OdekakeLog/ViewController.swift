@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainMapView: MKMapView!
     //位置情報マネージャー
     var locationManager : CLLocationManager?
+    var updatingLocationStatus : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +27,29 @@ class ViewController: UIViewController {
         
         // 位置情報の許可を求める
         requestAlwaysAuthorization()
+        
+        // ボタンのアイコン見た目を設定
+        changeButtonIcon(updatingLocationStatus: false)
     }
     
-    @IBAction func mainButtonAction(_ sender: Any) {
+    @IBOutlet weak var centerButtonOutlet: UIButton!
+    //centerButtonの見た目をStartとStopの切り替えをするためのメソッド
+    func changeButtonIcon(updatingLocationStatus:Bool){
+        self.updatingLocationStatus = updatingLocationStatus
+        let imageIcon = updatingLocationStatus ? UIImage(named: "stopImageIcon") : UIImage(named: "startImageIcon")
+        centerButtonOutlet.setImage(imageIcon, for: .normal)
+    }
+    
+    @IBAction func centerButtonAction(_ sender: Any) {
+        if !self.updatingLocationStatus {
+            startAction()
+        }else{
+            stopAction()
+        }
+        changeButtonIcon(updatingLocationStatus: !self.updatingLocationStatus)
+    }
+
+    func startAction() {
         //描画したMapの線を削除
         mainMapView.removeOverlays(mainMapView.overlays)
 
@@ -49,7 +70,8 @@ class ViewController: UIViewController {
         locationManager!.startUpdatingLocation()
     }
     
-    @IBAction func subButtonAction(_ sender: Any) {
+    func stopAction() {
+        // 位置情報取得終了
         locationManager!.stopUpdatingLocation()
         
         //取得した位置情報データの取得
@@ -129,3 +151,11 @@ extension ViewController: MKMapViewDelegate {
 //https://stackoverflow.com/questions/50372633/remove-polylines-at-swift Mapの線を削除する
 //https://program-life.com/1431 バックグラウンドで位置情報を取得する際の注意事項
 //https://qiita.com/uhooi/items/429cac9b798b9c0937ae UserDefaultの使い方
+//https://qiita.com/Sossiii/items/7f8dc9e0ed0d87d2a2aa モーダルの追加
+
+//https://stackoverflow.com/questions/37772411/how-to-add-system-icons-for-a-uibutton-programmatically システムイメージをアイコンに使用
+//https://program-life.com/497 アイコンのリサイズ
+//https://stackoverflow.com/questions/58256044/how-to-change-sf-symbol-icon-color-in-uikit アイコンの色替え
+
+//https://icooon-mono.com/15443-%E5%86%8D%E7%94%9F%E3%83%9C%E3%82%BF%E3%83%B3/ 再生ボタン
+//https://icooon-mono.com/15452-%e5%86%8d%e7%94%9f%e5%81%9c%e6%ad%a2%e3%83%9c%e3%82%bf%e3%83%b3/ 停止ボタン

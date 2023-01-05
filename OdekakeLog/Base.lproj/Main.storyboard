@@ -3,6 +3,7 @@
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,41 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lv1-Ta-LfM">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lv1-Ta-LfM">
                                 <rect key="frame" x="0.0" y="47" width="375" height="529"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1T-qk-RYy">
-                                <rect key="frame" x="66" y="604" width="75" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c2-2A-DBJ">
+                                <rect key="frame" x="143" y="598" width="88" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="startImageIcon" renderingMode="original" variableValue="0.80000000000000004"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="mainButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kIx-Bl-2Q7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cs6-aJ-MFh">
-                                <rect key="frame" x="234" y="604" width="75" height="75"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="subButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I15-iB-mv2"/>
+                                    <action selector="centerButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0HF-N2-Q6I"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A1T-qk-RYy" secondAttribute="bottom" constant="99" id="CUu-rs-9Lm"/>
-                            <constraint firstItem="A1T-qk-RYy" firstAttribute="baseline" secondItem="cs6-aJ-MFh" secondAttribute="baseline" id="LhM-Jb-9yF"/>
-                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Q6s-ss-7eK"/>
-                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Up1-Sy-xWv"/>
-                            <constraint firstItem="A1T-qk-RYy" firstAttribute="top" secondItem="lv1-Ta-LfM" secondAttribute="bottom" constant="28" id="Vqu-oU-3eI"/>
-                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e7b-Dr-8BT"/>
-                            <constraint firstItem="A1T-qk-RYy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="66" id="jdR-YJ-rzH"/>
-                            <constraint firstItem="cs6-aJ-MFh" firstAttribute="leading" secondItem="A1T-qk-RYy" secondAttribute="trailing" constant="93" id="xbi-3Z-qvx"/>
-                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="centerButtonOutlet" destination="9c2-2A-DBJ" id="fEW-KD-JYe"/>
                         <outlet property="mainMapView" destination="lv1-Ta-LfM" id="PWP-py-WdB"/>
                     </connections>
                 </viewController>
@@ -61,6 +49,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="startImageIcon" width="85.333335876464844" height="85.333335876464844"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
