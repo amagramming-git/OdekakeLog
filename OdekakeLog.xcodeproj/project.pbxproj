@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E9637882966814A00EF37E4 /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3E9637872966814A00EF37E4 /* memo.txt */; };
 		3ECDDE2A29650188001BEDCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE2929650188001BEDCC /* AppDelegate.swift */; };
 		3ECDDE2C29650188001BEDCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE2B29650188001BEDCC /* SceneDelegate.swift */; };
 		3ECDDE2E29650188001BEDCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE2D29650188001BEDCC /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E9637872966814A00EF37E4 /* memo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = memo.txt; sourceTree = "<group>"; };
 		3ECDDE2629650188001BEDCC /* OdekakeLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OdekakeLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ECDDE2929650188001BEDCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ECDDE2B29650188001BEDCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		3ECDDE1D29650188001BEDCC = {
 			isa = PBXGroup;
 			children = (
+				3E9637872966814A00EF37E4 /* memo.txt */,
 				3ED6E90F2965AE2200234F08 /* LocationEntity+CoreDataClass.swift */,
 				3ED6E9102965AE2200234F08 /* LocationEntity+CoreDataProperties.swift */,
 				3ED6E9092965A38200234F08 /* CoreDataRepository.swift */,
@@ -259,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E9637882966814A00EF37E4 /* memo.txt in Resources */,
 				3ECDDE392965018C001BEDCC /* LaunchScreen.storyboard in Resources */,
 				3ECDDE362965018C001BEDCC /* Assets.xcassets in Resources */,
 				3ECDDE3129650188001BEDCC /* Main.storyboard in Resources */,
