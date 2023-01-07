@@ -17,17 +17,20 @@ class HistoryTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //TableViewnの準備
         historyTableView.dataSource = self
         historyTableView.delegate = self
         
         // tableViewに表示するactivityEntityListの作成
         self.activityEntityList = CoreDataRepository.array(sortKey: "startDate")
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        // tableViewに表示するactivityEntityListの作成
+        self.activityEntityList = CoreDataRepository.array(sortKey: "startDate")
+        
         //テーブルを再描画
         historyTableView.reloadData()
     }
@@ -73,6 +76,7 @@ extension HistoryTableViewController: UITableViewDataSource {
         dateFormatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
         var startDateStr = ""
         var endDateStr = ""
+        var imageIconSystemName = "location"
         
         let startDate = activityEntityList[indexPath.row]?.startDate
         if let startDate {
@@ -91,16 +95,20 @@ extension HistoryTableViewController: UITableViewDataSource {
             endDateStr = dateFormatter.string(from: endDate)
         }else{
             let taskId = activityEntityList[indexPath.row]!.taskId
-            let locationEntityList: [LocationEntity] = CoreDataRepository.array(
-                predicate: "taskId = \(taskId)",
-                sortKey: "timestamp")
-            activityEntityList[indexPath.row]!.setEndDate(endDate: (locationEntityList.last?.timestamp)!)
-            CoreDataRepository.save()
+            if taskId == Int64(UserDefaults.standard.integer(forKey: "taskId")){
+                imageIconSystemName = "location.fill"
+            }else{
+                let locationEntityList: [LocationEntity] = CoreDataRepository.array(
+                    predicate: "taskId = \(taskId)",
+                    sortKey: "timestamp")
+                activityEntityList[indexPath.row]!.setEndDate(endDate: (locationEntityList.last?.timestamp)!)
+                CoreDataRepository.save()
+            }
         }
 
         // cellのパラメータを設定
         cell.textLabel?.text = "\(startDateStr)〜\(endDateStr)"
-        cell.imageView?.image = UIImage(systemName: "location")
+        cell.imageView?.image = UIImage(systemName: imageIconSystemName)
         return cell
     }
 }

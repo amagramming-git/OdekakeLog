@@ -31,6 +31,9 @@ class ViewController: UIViewController {
         
         // ボタンのアイコン見た目を設定
         changeButtonIcon(updatingLocationStatus: false)
+        
+        // UserDefaultsのtaskIdの初期化
+        UserDefaults.standard.removeObject(forKey: "taskId")
     }
     
     @IBOutlet weak var centerButtonOutlet: UIButton!
@@ -106,6 +109,9 @@ class ViewController: UIViewController {
         activityEntityList[0].setEndDate(endDate: now)
         CoreDataRepository.save()
         
+        // UserDefaultsのtaskIdの初期化
+        UserDefaults.standard.removeObject(forKey: "taskId")
+
         //取得した位置情報データの取得
         let locationEntityList: [LocationEntity] = CoreDataRepository.array(
             predicate: "taskId = \(taskId)",
