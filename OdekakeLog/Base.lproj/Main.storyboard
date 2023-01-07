@@ -124,7 +124,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="I7l-ag-Lqq" kind="show" identifier="showDetailSegue" trigger="accessoryAction" id="szW-VZ-e3V"/>
+                                    <segue destination="I7l-ag-Lqq" kind="show" identifier="showDetailSegue" id="19x-ch-YqU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
