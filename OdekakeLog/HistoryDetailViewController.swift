@@ -14,6 +14,8 @@ class HistoryDetailViewController: UIViewController {
     
     @IBOutlet weak var historyDetailMapView: MKMapView!
     
+    @IBOutlet weak var headNavigationItem: UINavigationItem!
+    
     var activityEntity: ActivityEntity!
     var mapCenter: CLLocationCoordinate2D!
     var mapLatitudinalMeters: Double = 0.0
@@ -21,6 +23,12 @@ class HistoryDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // headNavigationItemのラベルを設定
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.timeZone = TimeZone(identifier: TimeZone.current.identifier)
+        dateFormatter.dateFormat = "MM/dd HH:mm"
+        headNavigationItem.title = (dateFormatter.string(from: activityEntity.startDate!)) + "〜" + (dateFormatter.string(from: activityEntity.endDate!))
         
         // mapの準備
         historyDetailMapView.delegate = self

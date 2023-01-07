@@ -38,13 +38,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lv1-Ta-LfM">
-                                <rect key="frame" x="0.0" y="47" width="375" height="486"/>
+                                <rect key="frame" x="0.0" y="91" width="375" height="457"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aQz-u8-PTZ">
+                                <rect key="frame" x="0.0" y="47" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="お出かけログ" id="5mb-3n-Lmg"/>
+                                </items>
+                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c2-2A-DBJ">
-                                <rect key="frame" x="144" y="564" width="87" height="87"/>
+                                <rect key="frame" x="144" y="576" width="87" height="87"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="87" id="rHh-tp-gWL"/>
+                                    <constraint firstAttribute="height" constant="87" id="xcq-U0-qY6"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -58,13 +64,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="9c2-2A-DBJ" firstAttribute="top" secondItem="lv1-Ta-LfM" secondAttribute="bottom" constant="31" id="3Mg-D9-vtv"/>
-                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5z8-R7-ooJ"/>
-                            <constraint firstItem="9c2-2A-DBJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="144" id="Hgz-kM-HQi"/>
-                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="centerX" secondItem="9c2-2A-DBJ" secondAttribute="centerX" id="Kva-kg-OHG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9c2-2A-DBJ" secondAttribute="bottom" constant="29" id="W66-SU-3GS"/>
-                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hfJ-8C-IfR"/>
-                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kU7-vj-zPt"/>
+                            <constraint firstItem="9c2-2A-DBJ" firstAttribute="top" secondItem="lv1-Ta-LfM" secondAttribute="bottom" constant="28" id="AFe-5u-ShX"/>
+                            <constraint firstItem="aQz-u8-PTZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="C8W-Y7-ZN0"/>
+                            <constraint firstItem="aQz-u8-PTZ" firstAttribute="leading" secondItem="lv1-Ta-LfM" secondAttribute="leading" id="VZb-Mk-uE3"/>
+                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="top" secondItem="aQz-u8-PTZ" secondAttribute="bottom" id="Z8Y-NT-E7Y"/>
+                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="centerX" secondItem="9c2-2A-DBJ" secondAttribute="centerX" id="cXS-6g-tkR"/>
+                            <constraint firstItem="aQz-u8-PTZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gKC-b0-Bvb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9c2-2A-DBJ" secondAttribute="bottom" constant="17" id="glc-x0-y3n"/>
+                            <constraint firstItem="aQz-u8-PTZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hDK-Uo-5vl"/>
+                            <constraint firstItem="aQz-u8-PTZ" firstAttribute="trailing" secondItem="lv1-Ta-LfM" secondAttribute="trailing" id="tcv-no-W0L"/>
+                            <constraint firstItem="9c2-2A-DBJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="144" id="uPK-wO-fZ6"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="figure.walk" catalog="system" id="8TK-g7-fKi"/>
@@ -98,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="56.799999999999997" y="802.46305418719214"/>
         </scene>
-        <!--History Table View Controller-->
+        <!--お出かけ履歴-->
         <scene sceneID="TB2-1B-F46">
             <objects>
                 <viewController id="9PA-nC-8fl" customClass="HistoryTableViewController" customModule="OdekakeLog" customModuleProvider="target" sceneMemberID="viewController">
@@ -129,7 +138,9 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" id="QSQ-Ld-EtS"/>
+                    <navigationItem key="navigationItem" title="お出かけ履歴" id="QSQ-Ld-EtS">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="53A-Y8-0hq"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="historyTableView" destination="Gfs-D9-b1e" id="BDG-Z2-EX1"/>
                     </connections>
@@ -147,21 +158,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVH-PB-w6i">
-                                <rect key="frame" x="0.0" y="130" width="375" height="379"/>
+                                <rect key="frame" x="0.0" y="91" width="375" height="638"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i4W-PZ-0qq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iVH-PB-w6i" firstAttribute="top" secondItem="i4W-PZ-0qq" secondAttribute="top" constant="39" id="1hm-am-ygK"/>
-                            <constraint firstItem="iVH-PB-w6i" firstAttribute="centerX" secondItem="Ovf-qH-zTj" secondAttribute="centerX" id="YJE-2o-yt5"/>
-                            <constraint firstItem="iVH-PB-w6i" firstAttribute="leading" secondItem="i4W-PZ-0qq" secondAttribute="leading" id="r0V-5Y-4if"/>
-                            <constraint firstItem="i4W-PZ-0qq" firstAttribute="bottom" secondItem="iVH-PB-w6i" secondAttribute="bottom" constant="220" id="udY-D3-xld"/>
+                            <constraint firstItem="iVH-PB-w6i" firstAttribute="leading" secondItem="i4W-PZ-0qq" secondAttribute="leading" id="RQF-WE-bpK"/>
+                            <constraint firstItem="iVH-PB-w6i" firstAttribute="top" secondItem="i4W-PZ-0qq" secondAttribute="top" id="TdZ-5j-cRo"/>
+                            <constraint firstItem="iVH-PB-w6i" firstAttribute="centerX" secondItem="Ovf-qH-zTj" secondAttribute="centerX" id="XDt-D7-Ug6"/>
+                            <constraint firstItem="iVH-PB-w6i" firstAttribute="bottom" secondItem="i4W-PZ-0qq" secondAttribute="bottom" id="gKJ-9D-6aN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aHt-G5-r0x"/>
                     <connections>
+                        <outlet property="headNavigationItem" destination="aHt-G5-r0x" id="C2l-vE-io9"/>
                         <outlet property="historyDetailMapView" destination="iVH-PB-w6i" id="Pm3-yM-NiZ"/>
                     </connections>
                 </viewController>
