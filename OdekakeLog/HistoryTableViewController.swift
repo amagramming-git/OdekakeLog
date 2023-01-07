@@ -23,13 +23,13 @@ class HistoryTableViewController: UIViewController {
         historyTableView.delegate = self
         
         // tableViewに表示するactivityEntityListの作成
-        self.activityEntityList = CoreDataRepository.array(sortKey: "startDate")
+        self.activityEntityList = CoreDataRepository.array(sortKey: "startDate",ascending: false)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         // tableViewに表示するactivityEntityListの作成
-        self.activityEntityList = CoreDataRepository.array(sortKey: "startDate")
+        self.activityEntityList = CoreDataRepository.array(sortKey: "startDate",ascending: false)
         
         //テーブルを再描画
         historyTableView.reloadData()
@@ -53,21 +53,11 @@ extension HistoryTableViewController: UITableViewDelegate {
 
 extension HistoryTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if activityEntityList.count == 0{
-            return 1
-        }else{
-            return activityEntityList.count
-        }
+        return activityEntityList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = historyTableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell", for: indexPath)
-        
-        guard activityEntityList.count != 0 else {
-            cell.textLabel?.text = "No Data"
-            cell.imageView?.image = UIImage(systemName: "location.slash")
-            return cell
-        }
 
         // tableViewCellのラベルテキストの作成
         let dateFormatter = DateFormatter()
@@ -111,7 +101,23 @@ extension HistoryTableViewController: UITableViewDataSource {
         cell.imageView?.image = UIImage(systemName: imageIconSystemName)
         return cell
     }
+    // 追加：セルの削除機能
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            CoreDataRepository.delete(activityEntityList[indexPath.row]!)
+            let locationEntityList: [LocationEntity] = CoreDataRepository.array(
+                predicate: "taskId = \(activityEntityList[indexPath.row]!.taskId)")
+            locationEntityList.forEach{
+                CoreDataRepository.delete($0)
+            }
+            CoreDataRepository.save()
+            
+            activityEntityList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
 }
 
 //https://softmoco.com/basics/how-to-use-table-view.php テーブルビューの基本的な作成方法
 //https://naoya-ono.com/swift/tableview-reload/ 画面遷移でTableViewを再度描画
+//https://satoriku.com/dev-app-step14/ 削除機能の追加
