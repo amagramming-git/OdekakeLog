@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3E9637882966814A00EF37E4 /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3E9637872966814A00EF37E4 /* memo.txt */; };
-		3EBA85FA2969233B004DE313 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA85F92969233B004DE313 /* HistoryViewController.swift */; };
+		3EBA85FA2969233B004DE313 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA85F92969233B004DE313 /* HistoryTableViewController.swift */; };
+		3EBA85FD29692914004DE313 /* ActivityEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA85FB29692914004DE313 /* ActivityEntity+CoreDataClass.swift */; };
+		3EBA85FE29692914004DE313 /* ActivityEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBA85FC29692914004DE313 /* ActivityEntity+CoreDataProperties.swift */; };
 		3ECDDE2A29650188001BEDCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE2929650188001BEDCC /* AppDelegate.swift */; };
 		3ECDDE2C29650188001BEDCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE2B29650188001BEDCC /* SceneDelegate.swift */; };
 		3ECDDE2E29650188001BEDCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDDE2D29650188001BEDCC /* ViewController.swift */; };
@@ -45,7 +47,9 @@
 
 /* Begin PBXFileReference section */
 		3E9637872966814A00EF37E4 /* memo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = memo.txt; sourceTree = "<group>"; };
-		3EBA85F92969233B004DE313 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		3EBA85F92969233B004DE313 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		3EBA85FB29692914004DE313 /* ActivityEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3EBA85FC29692914004DE313 /* ActivityEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3ECDDE2629650188001BEDCC /* OdekakeLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OdekakeLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ECDDE2929650188001BEDCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3ECDDE2B29650188001BEDCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 		3ECDDE1D29650188001BEDCC = {
 			isa = PBXGroup;
 			children = (
+				3EBA85FB29692914004DE313 /* ActivityEntity+CoreDataClass.swift */,
+				3EBA85FC29692914004DE313 /* ActivityEntity+CoreDataProperties.swift */,
 				3E9637872966814A00EF37E4 /* memo.txt */,
 				3ED6E90F2965AE2200234F08 /* LocationEntity+CoreDataClass.swift */,
 				3ED6E9102965AE2200234F08 /* LocationEntity+CoreDataProperties.swift */,
@@ -130,7 +136,7 @@
 				3ECDDE372965018C001BEDCC /* LaunchScreen.storyboard */,
 				3ECDDE3A2965018C001BEDCC /* Info.plist */,
 				3ECDDE3229650188001BEDCC /* OdekakeLog.xcdatamodeld */,
-				3EBA85F92969233B004DE313 /* HistoryViewController.swift */,
+				3EBA85F92969233B004DE313 /* HistoryTableViewController.swift */,
 			);
 			path = OdekakeLog;
 			sourceTree = "<group>";
@@ -293,6 +299,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EBA85FD29692914004DE313 /* ActivityEntity+CoreDataClass.swift in Sources */,
+				3EBA85FE29692914004DE313 /* ActivityEntity+CoreDataProperties.swift in Sources */,
 				3ED6E90A2965A38200234F08 /* CoreDataRepository.swift in Sources */,
 				3ECDDE2E29650188001BEDCC /* ViewController.swift in Sources */,
 				3ECDDE3429650188001BEDCC /* OdekakeLog.xcdatamodeld in Sources */,
@@ -300,7 +308,7 @@
 				3ECDDE2A29650188001BEDCC /* AppDelegate.swift in Sources */,
 				3ECDDE2C29650188001BEDCC /* SceneDelegate.swift in Sources */,
 				3ED6E9112965AE2200234F08 /* LocationEntity+CoreDataClass.swift in Sources */,
-				3EBA85FA2969233B004DE313 /* HistoryViewController.swift in Sources */,
+				3EBA85FA2969233B004DE313 /* HistoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

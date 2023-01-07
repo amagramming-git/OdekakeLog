@@ -97,16 +97,16 @@
             </objects>
             <point key="canvasLocation" x="56.799999999999997" y="802.46305418719214"/>
         </scene>
-        <!--History View Controller-->
+        <!--History Table View Controller-->
         <scene sceneID="TB2-1B-F46">
             <objects>
-                <viewController id="9PA-nC-8fl" customClass="HistoryViewController" customModule="OdekakeLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9PA-nC-8fl" customClass="HistoryTableViewController" customModule="OdekakeLog" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Gfs-D9-b1e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyTableViewCell" textLabel="2Ph-BH-tZJ" style="IBUITableViewCellStyleDefault" id="4wL-xN-YkW">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryTableViewCell" textLabel="2Ph-BH-tZJ" style="IBUITableViewCellStyleDefault" id="4wL-xN-YkW">
                                 <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4wL-xN-YkW" id="DU1-ef-H00">
@@ -127,7 +127,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="QSQ-Ld-EtS"/>
                     <connections>
-                        <outlet property="historyTableView" destination="Gfs-D9-b1e" id="zbM-5P-UTE"/>
+                        <outlet property="historyTableView" destination="Gfs-D9-b1e" id="BDG-Z2-EX1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zl4-FB-Ru5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -58,7 +58,14 @@ class ViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMddHHmmss"
         let now = Date()
-        UserDefaults.standard.set(Int64(formatter.string(from: now)), forKey: "taskId")
+        let taskId = Int64(formatter.string(from: now))!
+        UserDefaults.standard.set(taskId, forKey: "taskId")
+        
+        //ActivityEntityの登録
+        let entity = ActivityEntity.new(taskId: taskId)
+        entity.setStartDate(startDate: now)
+        CoreDataRepository.add(entity)
+        CoreDataRepository.save()
         
         // 位置情報取得の設定
         let isAuthorizedAlways = locationManager!.authorizationStatus == .authorizedAlways
@@ -75,8 +82,17 @@ class ViewController: UIViewController {
         // 位置情報取得終了
         locationManager!.stopUpdatingLocation()
         
-        //取得した位置情報データの取得
+        // taskIdの取得
         let taskId = Int64(UserDefaults.standard.integer(forKey: "taskId"))
+        
+        // ActivityEntityの更新
+        let activityEntityList: [ActivityEntity] = CoreDataRepository.array(
+            predicate: "taskId = \(taskId)")
+        let now = Date()
+        activityEntityList[0].setEndDate(endDate: now)
+        CoreDataRepository.save()
+        
+        //取得した位置情報データの取得
         let locationEntityList: [LocationEntity] = CoreDataRepository.array(
             predicate: "taskId = \(taskId)",
             sortKey: "timestamp")
