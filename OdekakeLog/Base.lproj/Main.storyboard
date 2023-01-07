@@ -42,13 +42,13 @@
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c2-2A-DBJ">
-                                <rect key="frame" x="133" y="567" width="109" height="87"/>
+                                <rect key="frame" x="144" y="564" width="87" height="87"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="87" id="OWM-Hh-yO9"/>
+                                    <constraint firstAttribute="height" constant="87" id="rHh-tp-gWL"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="startImageIcon" renderingMode="original" variableValue="0.80000000000000004"/>
+                                    <imageReference key="image" image="play.circle.fill" catalog="system" renderingMode="original" variableValue="0.80000000000000004"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="centerButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0HF-N2-Q6I"/>
@@ -58,12 +58,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9c2-2A-DBJ" secondAttribute="bottom" constant="26" id="KRA-mT-EM3"/>
-                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Smg-Oy-QSW"/>
-                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gHC-YQ-cy0"/>
-                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="centerX" secondItem="9c2-2A-DBJ" secondAttribute="centerX" id="p8c-qz-wlP"/>
-                            <constraint firstItem="9c2-2A-DBJ" firstAttribute="top" secondItem="lv1-Ta-LfM" secondAttribute="bottom" constant="34" id="rRe-AN-oqI"/>
-                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xnP-HD-A6p"/>
+                            <constraint firstItem="9c2-2A-DBJ" firstAttribute="top" secondItem="lv1-Ta-LfM" secondAttribute="bottom" constant="31" id="3Mg-D9-vtv"/>
+                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5z8-R7-ooJ"/>
+                            <constraint firstItem="9c2-2A-DBJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="144" id="Hgz-kM-HQi"/>
+                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="centerX" secondItem="9c2-2A-DBJ" secondAttribute="centerX" id="Kva-kg-OHG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9c2-2A-DBJ" secondAttribute="bottom" constant="29" id="W66-SU-3GS"/>
+                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hfJ-8C-IfR"/>
+                            <constraint firstItem="lv1-Ta-LfM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kU7-vj-zPt"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="figure.walk" catalog="system" id="8TK-g7-fKi"/>
@@ -122,6 +123,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="I7l-ag-Lqq" kind="show" identifier="showDetailSegue" trigger="accessoryAction" id="szW-VZ-e3V"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -134,17 +138,32 @@
             </objects>
             <point key="canvasLocation" x="999.20000000000005" y="802.46305418719214"/>
         </scene>
-        <!--View Controller-->
+        <!--History Detail View Controller-->
         <scene sceneID="EC8-t8-lIz">
             <objects>
-                <viewController id="I7l-ag-Lqq" sceneMemberID="viewController">
+                <viewController id="I7l-ag-Lqq" customClass="HistoryDetailViewController" customModule="OdekakeLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ovf-qH-zTj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVH-PB-w6i">
+                                <rect key="frame" x="0.0" y="130" width="375" height="379"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="i4W-PZ-0qq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iVH-PB-w6i" firstAttribute="top" secondItem="i4W-PZ-0qq" secondAttribute="top" constant="39" id="1hm-am-ygK"/>
+                            <constraint firstItem="iVH-PB-w6i" firstAttribute="centerX" secondItem="Ovf-qH-zTj" secondAttribute="centerX" id="YJE-2o-yt5"/>
+                            <constraint firstItem="iVH-PB-w6i" firstAttribute="leading" secondItem="i4W-PZ-0qq" secondAttribute="leading" id="r0V-5Y-4if"/>
+                            <constraint firstItem="i4W-PZ-0qq" firstAttribute="bottom" secondItem="iVH-PB-w6i" secondAttribute="bottom" constant="220" id="udY-D3-xld"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aHt-G5-r0x"/>
+                    <connections>
+                        <outlet property="historyDetailMapView" destination="iVH-PB-w6i" id="Pm3-yM-NiZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLc-qJ-zsC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,7 +173,7 @@
     <resources>
         <image name="clock" catalog="system" width="128" height="123"/>
         <image name="figure.walk" catalog="system" width="95" height="128"/>
-        <image name="startImageIcon" width="85.333335876464844" height="85.333335876464844"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="secondarySystemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

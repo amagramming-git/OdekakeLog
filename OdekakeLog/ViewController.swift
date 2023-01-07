@@ -37,8 +37,22 @@ class ViewController: UIViewController {
     //centerButtonの見た目をStartとStopの切り替えをするためのメソッド
     func changeButtonIcon(updatingLocationStatus:Bool){
         self.updatingLocationStatus = updatingLocationStatus
-        let imageIcon = updatingLocationStatus ? UIImage(named: "stopImageIcon") : UIImage(named: "startImageIcon")
+        var imageIcon = updatingLocationStatus ? UIImage(systemName: "stop.circle.fill") : UIImage(systemName: "play.circle.fill")
+        imageIcon = resize(image: imageIcon!, width: imageIcon!.size.width * 5)
+        imageIcon = updatingLocationStatus ? imageIcon!.withTintColor(.red) : imageIcon!.withTintColor(.blue)
         centerButtonOutlet.setImage(imageIcon, for: .normal)
+    }
+    func resize(image: UIImage, width: Double) -> UIImage {
+        // オリジナル画像のサイズからアスペクト比を計算
+        let aspectScale = image.size.height / image.size.width
+        // widthからアスペクト比を元にリサイズ後のサイズを取得
+        let resizedSize = CGSize(width: width, height: width * Double(aspectScale))
+        // リサイズ後のUIImageを生成して返却
+        UIGraphicsBeginImageContext(resizedSize)
+        image.draw(in: CGRect(x: 0, y: 0, width: resizedSize.width, height: resizedSize.height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resizedImage!
     }
     
     @IBAction func centerButtonAction(_ sender: Any) {
