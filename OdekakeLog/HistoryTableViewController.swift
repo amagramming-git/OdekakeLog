@@ -53,6 +53,12 @@ extension HistoryTableViewController: UITableViewDelegate {
 
 extension HistoryTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if activityEntityList.count == 0 {
+            self.historyTableView.setEmptyMessage("お出かけ履歴はありません")
+        } else {
+            self.historyTableView.restore()
+        }
+
         return activityEntityList.count
     }
     
@@ -68,6 +74,7 @@ extension HistoryTableViewController: UITableViewDataSource {
         var endDateStr = ""
         var imageIconSystemName = "location"
         
+        //startDateとendDateを取得・無いなら設定
         let startDate = activityEntityList[indexPath.row]?.startDate
         if let startDate {
             startDateStr = dateFormatter.string(from: startDate)
@@ -101,7 +108,8 @@ extension HistoryTableViewController: UITableViewDataSource {
         cell.imageView?.image = UIImage(systemName: imageIconSystemName)
         return cell
     }
-    // 追加：セルの削除機能
+    
+    // セルの削除機能
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             CoreDataRepository.delete(activityEntityList[indexPath.row]!)
@@ -117,7 +125,27 @@ extension HistoryTableViewController: UITableViewDataSource {
         }
     }
 }
+extension UITableView {
 
+    func setEmptyMessage(_ message: String) {
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+        messageLabel.text = message
+        messageLabel.textColor = .black
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
+        messageLabel.sizeToFit()
+
+        self.backgroundView = messageLabel
+        self.separatorStyle = .none
+    }
+
+    func restore() {
+        self.backgroundView = nil
+        self.separatorStyle = .singleLine
+    }
+}
 //https://softmoco.com/basics/how-to-use-table-view.php テーブルビューの基本的な作成方法
 //https://naoya-ono.com/swift/tableview-reload/ 画面遷移でTableViewを再度描画
 //https://satoriku.com/dev-app-step14/ 削除機能の追加
+//https://stackoverflow.com/questions/15746745/handling-an-empty-uitableview-print-a-friendly-message テーブルが0件のときのメッセージ表示機能

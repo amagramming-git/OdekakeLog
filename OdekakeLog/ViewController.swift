@@ -194,9 +194,6 @@ extension ViewController: MKMapViewDelegate {
 //https://program-life.com/497 アイコンのリサイズ
 //https://stackoverflow.com/questions/58256044/how-to-change-sf-symbol-icon-color-in-uikit アイコンの色替え
 
-//https://icooon-mono.com/15443-%E5%86%8D%E7%94%9F%E3%83%9C%E3%82%BF%E3%83%B3/ 再生ボタン
-//https://icooon-mono.com/15452-%e5%86%8d%e7%94%9f%e5%81%9c%e6%ad%a2%e3%83%9c%e3%82%bf%e3%83%b3/ 停止ボタン
-
 //https://softmoco.com/basics/how-to-implement-table-view-navigation.php 履歴画面の構成と画面遷移
 
 //https://grandbig.github.io/blog/2017/06/04/put-annotation-2/ mapに画像を配置
